@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de Selectores DOM</title>
+    <style>
+        .demo {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Selector por ID</h1>
+
+    <p class="demo">Primer párrafo con clase demo.</p>
+    <p class="demo">Segundo párrafo con clase demo.</p>
+
+    <div>
+        <p>Primer párrafo dentro de div.</p>
+        <p>Segundo párrafo dentro de div.</p>
+    </div>
+
+    <script>
+        // Selector por ID
+        var elementoID = document.getElementById("titulo");
+        elementoID.innerHTML = "Texto modificado por ID";
+
+        // Selector por Clase
+        var elementosClase = document.getElementsByClassName("demo");
+        elementosClase[0].innerHTML = "Texto modificado en primer demo";
+        elementosClase[1].innerHTML = "Texto modificado en segundo demo";
+
+        // Selector por Etiqueta
+
+        var elementosEtiqueta = document.getElementsByTagName("p");
+
+       //Como hay varios <p> en tu página, el navegador los agrupa en ese HTMLCollection,
+      // algo similar a [ <p>Primer párrafo</p>, <p>Segundo párrafo</p>, <p>Otro párrafo</p> ]
+
+
+        for (var i = 0; i < elementosEtiqueta.length; i++) {
+            elementosEtiqueta[i].style.color = "green";
+        }
+    </script>
+
+</body>
+</html>
